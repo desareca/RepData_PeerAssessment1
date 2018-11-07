@@ -1,9 +1,6 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-html_document:
-keep_md: true
----
+Reproducible Research: Peer Assessment 1
+========================================================
+
 
 ## Introduction
 
@@ -76,7 +73,7 @@ With the created object we make a histogram.
 qplot(stepsSum, data = activityday, main = "TOTAL NUMBER OF STEPS PER DAY", xlab = "STEPS", ylab = "COUNTS", bins = 10) + geom_histogram(colour = "gray", fill = "blue", bins = 10)
 ```
 
-![plot of chunk sum steps for day](figure/sum steps for day-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 The mean and median of the total number of steps taken per day:
 
@@ -107,7 +104,7 @@ names(activityInterval) <- c("interval", "steps")
 qplot(interval, steps, data = activityInterval, geom = "path", main = "MEAN TOTAL NUMBER OF STEPS PER INTERVAL") + geom_path(colour = "blue")
 ```
 
-![plot of chunk plot mean steps for Interval](figure/plot mean steps for Interval-1.png)
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
 
 The interval that contains the maximum number of steps:
 
@@ -143,7 +140,7 @@ names(activityDayNew) <- c("interval", "steps")
 qplot(steps,data = activityDayNew,main = "TOTAL NUMBER OF STEPS PER DAY (WITHOUT NA´s)", xlab = "STEPS", ylab = "COUNTS", bins = 10) + geom_histogram(colour = "gray",fill = "blue",bins = 10)
 ```
 
-![plot of chunk missing values](figure/missing values-1.png)
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
 
 With the missing data modified we proceed to calculate the mean and median of the new data set.
 
@@ -223,5 +220,5 @@ activityNewWeekday <- summarise(group_by(activityNew, interval, week), stepsMean
 qplot(interval, stepsMean,data = activityNewWeekday, geom = "path", main = "MEAN TOTAL NUMBER OF STEPS PER INTERVAL") + facet_grid(week~.) + geom_path(colour = "blue")
 ```
 
-![plot of chunk plot Weekday and weekend](figure/plot Weekday and weekend-1.png)
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
 
